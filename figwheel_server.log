@@ -1,0 +1,452 @@
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.722 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.249 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.206 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.125 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.149 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 5.47 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/weather.cljs  ----[0m
+
+  [1m [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/weather.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 3.502 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/weather.cljs  ----[0m
+
+  [1m [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/weather.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.373 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/weather.cljs  ----[0m
+
+  [1mAssert failed: Circular dependency detected, weather.weather -> weather.weather
+(every? (fn* [p1__2873#] (not (contains? *cljs-dep-set* p1__2873#))) deps)[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/weather.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.361 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/weather.cljs  ----[0m
+
+  [1mAssert failed: Circular dependency detected, weather.weather -> weather.weather
+(every? (fn* [p1__2873#] (not (contains? *cljs-dep-set* p1__2873#))) deps)[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/weather.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/core.cljs   line:35  column:3  ----[0m
+
+  [1mUse of undeclared Var weather.weather/weather-page[0m
+
+  [36m31[0m  [36m     [nav-link "#/about" "About" :about][0m
+  [36m32[0m  [36m     [nav-link "#/luminus" "Luminus Info" :luminus]]]])[0m
+  [36m33[0m  [36m[0m
+  [36m34[0m  [36m(defn home-page [][0m
+  [33m35[0m  [1m  w/weather-page)[0m
+  [0m  [0m  [33m  ^--- Use of undeclared Var weather.weather/weather-page[0m
+  [36m36[0m  [36m[0m
+  [36m37[0m  [36m(defn about-page [][0m
+  [36m38[0m  [36m  [:div.container[0m
+  [36m39[0m  [36m   [:div.row[0m
+  [36m40[0m  [36m    [:div.col-md-12[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/core.cljs  ----[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 6.276 seconds.[0m
+[36m----  Exception    ----[0m
+
+  [1m/Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/weather.cljs (No such file or directory)[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+java.io.FileNotFoundException: /Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/weather.cljs (No such file or directory)
+ at java.io.FileInputStream.open0 (FileInputStream.java:-2)
+    java.io.FileInputStream.open (FileInputStream.java:195)
+    java.io.FileInputStream.<init> (FileInputStream.java:138)
+    clojure.java.io$fn__10972.invokeStatic (io.clj:238)
+    clojure.java.io/fn (io.clj:235)
+    clojure.java.io$fn__10881$G__10874__10888.invoke (io.clj:69)
+    clojure.java.io$fn__10942.invokeStatic (io.clj:165)
+    clojure.java.io/fn (io.clj:165)
+    clojure.java.io$fn__10894$G__10870__10901.invoke (io.clj:69)
+    clojure.java.io$reader.invokeStatic (io.clj:102)
+    clojure.java.io$reader.doInvoke (io.clj:86)
+    clojure.lang.RestFn.invoke (RestFn.java:410)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.core$apply.invokeStatic (core.clj:659)
+    clojure.core$slurp.invokeStatic (core.clj:6862)
+    clojure.core$slurp.doInvoke (core.clj:6862)
+    clojure.lang.RestFn.invoke (RestFn.java:410)
+    cljs.closure$source_on_disk.invokeStatic (closure.clj:1764)
+    cljs.closure$source_on_disk.invoke (closure.clj:1743)
+    cljs.closure$build$fn__17013.invoke (closure.clj:2604)
+    clojure.core$map$fn__5587.invoke (core.clj:2747)
+    clojure.lang.LazySeq.sval (LazySeq.java:40)
+    clojure.lang.LazySeq.seq (LazySeq.java:49)
+    clojure.lang.Cons.next (Cons.java:39)
+    clojure.lang.RT.next (RT.java:706)
+    clojure.core$next__5108.invokeStatic (core.clj:64)
+    clojure.core$dorun.invokeStatic (core.clj:3134)
+    clojure.core$doall.invokeStatic (core.clj:3140)
+    clojure.core$doall.invoke (core.clj:3140)
+    cljs.closure$build.invokeStatic (closure.clj:2604)
+    cljs.closure$build.invoke (closure.clj:2507)
+    cljs.build.api$build.invokeStatic (api.clj:205)
+    cljs.build.api$build.invoke (api.clj:189)
+    figwheel_sidecar.components.cljs_autobuild$cljs_build.invokeStatic (cljs_autobuild.clj:28)
+    figwheel_sidecar.components.cljs_autobuild$cljs_build.invoke (cljs_autobuild.clj:27)
+    figwheel_sidecar.build_middleware.injection$hook$fn__29694.invoke (injection.clj:197)
+    figwheel_sidecar.components.cljs_autobuild$notify_command_hook$fn__30082.invoke (cljs_autobuild.clj:68)
+    figwheel_sidecar.components.cljs_autobuild$figwheel_start_and_end_messages$fn__30074.invoke (cljs_autobuild.clj:48)
+    figwheel_sidecar.build_middleware.notifications$hook$fn__29943.invoke (notifications.clj:179)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__30000.invoke (clj_reloading.clj:111)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__30033.invoke (javascript_reloading.clj:48)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__30086.invoke (cljs_autobuild.clj:79)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__30127.invoke (cljs_autobuild.clj:231)
+    figwheel_sidecar.utils$sync_exec$fn__3726$fn__3727.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__3726.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__5476.invoke (core.clj:2025)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1149)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:624)
+    java.lang.Thread.run (Thread.java:748)
+
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.384 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.481 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.121 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.932 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.862 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.372 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/core.cljs  ----[0m
+
+  [1mNo such namespace: weather.weather, could not locate weather/weather.cljs, weather/weather.cljc, or JavaScript source providing "weather.weather" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.488 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/core.cljs  ----[0m
+
+  [1mNo such namespace: weather.weather, could not locate weather/weather.cljs, weather/weather.cljc, or JavaScript source providing "weather.weather" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.359 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/events.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/events.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.352 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/events.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/events.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.559 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/core.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.646 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/core.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.518 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/core.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.612 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/views.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/views.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 3.037 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.177 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.002 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.767 seconds.[0m
+[36m----  Could not Read  src/cljs/weather/views.cljs   line:12 ----[0m
+
+  [1m/Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 12, col 49] The map literal starting with (fn* [...] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m10[0m  [36m                           (-> %[0m
+  [36m11[0m  [36m                               .-target[0m
+  [33m12[0m  [1m                               .-checked)])}[0m
+  [0m  [0m  [33m                               /Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 12, col 49] The map literal starting with (fn* [...] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m13[0m  [36m  "City"][0m
+  [36m14[0m  [36m[:th "Current Temperature"][0m
+  [36m15[0m  [36m[:th "Weather Description"]])[0m
+
+[36m----  Reader Error : Please see src/cljs/weather/views.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:16  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m12[0m  [36m  ;; update to new order[0m
+  [36m13[0m  [36m[0m
+  [36m14[0m  [36m;;dispatchers[0m
+  [36m15[0m  [36m[0m
+  [33m16[0m  [1m(reg-event-db[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+  [36m17[0m  [36m  :initialize-db[0m
+  [36m18[0m  [36m  (fn [_ _][0m
+  [36m19[0m  [36m    db/default-db))[0m
+  [36m20[0m  [36m[0m
+  [36m21[0m  [36m(reg-event-db[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:21  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m17[0m  [36m  :initialize-db[0m
+  [36m18[0m  [36m  (fn [_ _][0m
+  [36m19[0m  [36m    db/default-db))[0m
+  [36m20[0m  [36m[0m
+  [33m21[0m  [1m(reg-event-db[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+  [36m22[0m  [36m  :set-active-page[0m
+  [36m23[0m  [36m  (fn [db [_ page]][0m
+  [36m24[0m  [36m    (assoc db :page page)))[0m
+  [36m25[0m  [36m[0m
+  [36m26[0m  [36m(reg-event-db[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:26  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m22[0m  [36m  :set-active-page[0m
+  [36m23[0m  [36m  (fn [db [_ page]][0m
+  [36m24[0m  [36m    (assoc db :page page)))[0m
+  [36m25[0m  [36m[0m
+  [33m26[0m  [1m(reg-event-db[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+  [36m27[0m  [36m  :set-docs[0m
+  [36m28[0m  [36m  (fn [db [_ docs]][0m
+  [36m29[0m  [36m    (assoc db :docs docs)))[0m
+  [36m30[0m  [36m[0m
+  [36m31[0m  [36m(reg-event-db :sort-city sort-by-city)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:31  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m27[0m  [36m  :set-docs[0m
+  [36m28[0m  [36m  (fn [db [_ docs]][0m
+  [36m29[0m  [36m    (assoc db :docs docs)))[0m
+  [36m30[0m  [36m[0m
+  [33m31[0m  [1m(reg-event-db :sort-city sort-by-city)[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 1.126 seconds.[0m
+[36m----  Could not Read  src/cljs/weather/views.cljs   line:12 ----[0m
+
+  [1m/Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 12, col 49] The map literal starting with (fn* [...] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m10[0m  [36m                           (-> %[0m
+  [36m11[0m  [36m                               .-target[0m
+  [33m12[0m  [1m                               .-checked)])}[0m
+  [0m  [0m  [33m                               /Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 12, col 49] The map literal starting with (fn* [...] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m13[0m  [36m  "City"][0m
+  [36m14[0m  [36m[:th "Current Temperature"][0m
+  [36m15[0m  [36m[:th "Weather Description"]])[0m
+
+[36m----  Reader Error : Please see src/cljs/weather/views.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.646 seconds.[0m
+[36m----  Could not Read  src/cljs/weather/views.cljs   line:12 ----[0m
+
+  [1m/Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 12, col 49] The map literal starting with (fn* [...] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m10[0m  [36m                           (-> %[0m
+  [36m11[0m  [36m                               .-target[0m
+  [33m12[0m  [1m                               .-checked)])}[0m
+  [0m  [0m  [33m                               /Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 12, col 49] The map literal starting with (fn* [...] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m13[0m  [36m  "City"][0m
+  [36m14[0m  [36m[:th "Current Temperature"][0m
+  [36m15[0m  [36m[:th "Weather Description"]])[0m
+
+[36m----  Reader Error : Please see src/cljs/weather/views.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.539 seconds.[0m
+[36m----  Could not Read  src/cljs/weather/views.cljs   line:9 ----[0m
+
+  [1m/Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 9, col 45] The map literal starting with (fn* [] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m 7[0m  [36m(defn table-header [][0m
+  [36m 8[0m  [36m  [:tr[0m
+  [33m 9[0m  [1m    [:th {#(re-frame/dispatch [:sort-city])}[0m
+  [0m  [0m  [33m    /Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/views.cljs [line 9, col 45] The map literal starting with (fn* [] (...)) on line 9 column 10 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m10[0m  [36m      "City"][0m
+  [36m11[0m  [36m    [:th "Current Temperature"][0m
+  [36m12[0m  [36m    [:th "Weather Description"]])[0m
+
+[36m----  Reader Error : Please see src/cljs/weather/views.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/views.cljs   line:9  column:23  ----[0m
+
+  [1mNo such namespace: re-frame, could not locate re_frame.cljs, re_frame.cljc, or JavaScript source providing "re-frame"[0m
+
+  [36m 5[0m  [36m            [weather.events]))[0m
+  [36m 6[0m  [36m[0m
+  [36m 7[0m  [36m(defn table-header [][0m
+  [36m 8[0m  [36m  [:tr[0m
+  [33m 9[0m  [1m    [:th {:on-click #(re-frame/dispatch [:sort-city])}[0m
+  [0m  [0m  [33m                      ^--- No such namespace: re-frame, could not locate re_frame.cljs, re_frame.cljc, or JavaScript source providing "re-frame"[0m
+  [36m10[0m  [36m      "City"][0m
+  [36m11[0m  [36m    [:th "Current Temperature"][0m
+  [36m12[0m  [36m    [:th "Weather Description"]])[0m
+  [36m13[0m  [36m[0m
+  [36m14[0m  [36m(defn city-row [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/views.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/views.cljs   line:9  column:23  ----[0m
+
+  [1mUse of undeclared Var re-frame/dispatch[0m
+
+  [36m 5[0m  [36m            [weather.events]))[0m
+  [36m 6[0m  [36m[0m
+  [36m 7[0m  [36m(defn table-header [][0m
+  [36m 8[0m  [36m  [:tr[0m
+  [33m 9[0m  [1m    [:th {:on-click #(re-frame/dispatch [:sort-city])}[0m
+  [0m  [0m  [33m                      ^--- Use of undeclared Var re-frame/dispatch[0m
+  [36m10[0m  [36m      "City"][0m
+  [36m11[0m  [36m    [:th "Current Temperature"][0m
+  [36m12[0m  [36m    [:th "Weather Description"]])[0m
+  [36m13[0m  [36m[0m
+  [36m14[0m  [36m(defn city-row [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/views.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.499 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.943 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:16  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m12[0m  [36m  ;; update to new order[0m
+  [36m13[0m  [36m[0m
+  [36m14[0m  [36m;;dispatchers[0m
+  [36m15[0m  [36m[0m
+  [33m16[0m  [1m(reg-event-db[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+  [36m17[0m  [36m  :initialize-db[0m
+  [36m18[0m  [36m  (fn [_ _][0m
+  [36m19[0m  [36m    db/default-db))[0m
+  [36m20[0m  [36m[0m
+  [36m21[0m  [36m(reg-event-db[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:21  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m17[0m  [36m  :initialize-db[0m
+  [36m18[0m  [36m  (fn [_ _][0m
+  [36m19[0m  [36m    db/default-db))[0m
+  [36m20[0m  [36m[0m
+  [33m21[0m  [1m(reg-event-db[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+  [36m22[0m  [36m  :set-active-page[0m
+  [36m23[0m  [36m  (fn [db [_ page]][0m
+  [36m24[0m  [36m    (assoc db :page page)))[0m
+  [36m25[0m  [36m[0m
+  [36m26[0m  [36m(reg-event-db[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:26  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m22[0m  [36m  :set-active-page[0m
+  [36m23[0m  [36m  (fn [db [_ page]][0m
+  [36m24[0m  [36m    (assoc db :page page)))[0m
+  [36m25[0m  [36m[0m
+  [33m26[0m  [1m(reg-event-db[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+  [36m27[0m  [36m  :set-docs[0m
+  [36m28[0m  [36m  (fn [db [_ docs]][0m
+  [36m29[0m  [36m    (assoc db :docs docs)))[0m
+  [36m30[0m  [36m[0m
+  [36m31[0m  [36m(reg-event-db :sort-city sort-by-city)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:31  column:2  ----[0m
+
+  [1mUse of undeclared Var weather.events/reg-event-db[0m
+
+  [36m27[0m  [36m  :set-docs[0m
+  [36m28[0m  [36m  (fn [db [_ docs]][0m
+  [36m29[0m  [36m    (assoc db :docs docs)))[0m
+  [36m30[0m  [36m[0m
+  [33m31[0m  [1m(reg-event-db :sort-city sort-by-city)[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var weather.events/reg-event-db[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.344 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.242 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.963 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/subs.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.506 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.424 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
