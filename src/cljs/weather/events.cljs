@@ -11,21 +11,26 @@
 (def appid "f333c36f17612d7b693745b00991425a")
 
 (defn make-remote-call [endpoint]
-  (go (let [response (<! (http/get endpoint))]
-        ;;enjoy your data
-        (js/console.log (:body response)))))
+  (go (let [response (<! (http/get endpoint {:with-credentials? false}))]
+        (:body response))))
 
-(defn get-data [{:keys [db]} [_ id]]
+(defn city-name [city-data]
+  (println "getting the city name:" (:name city-data))
+  (println "   from the city data:" city-data)
+  (:name city-data))
+
+(defn get-data [db [_ id]]
   (println "getting data for " id)
   (let [main    "http://api.openweathermap.org/data/2.5/weather"
         city-id (str "?id=" id)
         app-id  (str "&appid=" appid)
-        url     (str main city-id app-id)]
-    (make-remote-call url)))
+        url     (str main city-id app-id)
+        city-data (make-remote-call url)
+        city-name (city-name city-data)]
+    (println "city data" city-data)
+    (println "city name" city-name)
+    (assoc-in db [:cities (keyword city-name)] city-data)))
 
-(defn city-name [city-data]
-  (println "getting the city name")
-  (println city-data))
 
 (defn successful-get [db [_ data]]
   (println "successful get " data)
@@ -36,10 +41,9 @@
 (defn init-state [{:keys [db]} [event _]]
   (println "doing init state")
   (let [cities [4930956 2643743 5368361]]
-    (for [id cities]
-      (do (println "for each " id)
-          {:db db
-           :dispatch [:weather/get-data id]}))))
+    (println "for each " (first cities))
+    {:db db
+     :dispatch [:weather/get-data (first cities)]}))
 
 (defn sort-by-city
   [db [event _]])
@@ -66,6 +70,6 @@
 
 (reg-event-fx :weather/init-state     init-state)
 (reg-event-db :weather/sort-city      sort-by-city)
-(reg-event-fx :weather/get-data       get-data)
+(reg-event-db :weather/get-data       get-data)
 (reg-event-db :weather/successful-get successful-get)
 (reg-event-db :weather/failure        failure)
