@@ -5,6 +5,7 @@
 
   :dependencies [[clj-time "0.14.2"]
                  [cljs-ajax "0.7.3"]
+                 [cljs-http "0.1.44"]
                  [compojure "1.6.0"]
                  [cprop "0.1.11"]
                  [day8.re-frame/http-fx "0.1.2"]

@@ -1,4 +1,5 @@
 (ns weather.db)
 
 (def default-db
-  {:page :home})
+  {:page :home
+   :cities {}})

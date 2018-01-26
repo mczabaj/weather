@@ -5,14 +5,15 @@
             [weather.events]))
 
 (defn table-header []
-  [:tr
+  [:thead
+   [:tr
     [:th {:on-click #(rf/dispatch [:weather/sort-city])}
       "City"]
     [:th "Current Temperature"]
-    [:th "Weather Description"]])
+    [:th "Weather Description"]]])
 
 (defn city-row []
-  [:tr
+   [:tr
     [:td "Boston"]
     [:td "GET TEMP HERE"]
     [:td "GET DESC HERE"]])
@@ -20,7 +21,8 @@
 (defn city-table []
   [:table
     [table-header]
-    [city-row]])
+    [:tbody
+     [city-row]]])
 
 (defn weather-page []
   (rf/dispatch [:weather/init-state])
