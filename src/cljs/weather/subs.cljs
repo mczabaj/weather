@@ -11,4 +11,4 @@
   (fn [db _] (:docs db)))
 
 (reg-sub :weather/cities
-  (fn [db _] (:weather/cities db)))
+  (fn [db _] (:cities db)))

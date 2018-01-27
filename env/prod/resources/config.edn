@@ -1,2 +1,4 @@
 {:production true
- :port 3000}
+ :port 3000
+ :city-codes [4930956 2643743 5368361]}
+ 
