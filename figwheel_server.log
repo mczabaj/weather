@@ -450,3 +450,924 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather/vie
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.424 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.639 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/events.cljs  ----[0m
+
+  [1mInvalid :refer, var cljs.core.async/<!! does not exist [0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/events.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.7 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.221 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:37  column:52  ----[0m
+
+  [1mUse of undeclared Var weather.events/a[0m
+
+  [36m35[0m  [36m(defn successful-get [db [_ data]][0m
+  [36m36[0m  [36m  (println "successful get " data)[0m
+  [33m37[0m  [1m  (assoc-in db [:cities (keyword (city-name data))]a))[0m
+  [0m  [0m  [33m                                                   ^--- Use of undeclared Var weather.events/a[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn failure [db _])[0m
+  [36m40[0m  [36m[0m
+  [36m41[0m  [36m(defn init-state [{:keys [db]} [event _]][0m
+  [36m42[0m  [36m  (println "doing init state")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 3.038 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.539 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/events.cljs   line:14  column:3  ----[0m
+
+  [1mlet requires an even number of forms in binding vector[0m
+
+  [36m13[0m  [36m(defn make-remote-call [endpoint][0m
+  [33m14[0m  [1m  (let [response (go (<! (http/get endpoint {:with-credentials? false})))[0m
+  [0m  [0m  [33m  ^--- let requires an even number of forms in binding vector[0m
+  [36m15[0m  [36m        (:body response)]))[0m
+  [36m16[0m  [36m[0m
+  [36m17[0m  [36m(defn city-name [city-data][0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/events.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:37  column:52  ----[0m
+
+  [1mUse of undeclared Var weather.events/a[0m
+
+  [36m35[0m  [36m(defn successful-get [db [_ data]][0m
+  [36m36[0m  [36m  (println "successful get " data)[0m
+  [33m37[0m  [1m  (assoc-in db [:cities (keyword (city-name data))]a))[0m
+  [0m  [0m  [33m                                                   ^--- Use of undeclared Var weather.events/a[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn failure [db _])[0m
+  [36m40[0m  [36m[0m
+  [36m41[0m  [36m(defn init-state [{:keys [db]} [event _]][0m
+  [36m42[0m  [36m  (println "doing init state")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.475 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:37  column:3  ----[0m
+
+  [1mWrong number of args (2) passed to cljs.core/assoc-in[0m
+
+  [36m35[0m  [36m(defn successful-get [db [_ data]][0m
+  [36m36[0m  [36m  (println "successful get " data)[0m
+  [33m37[0m  [1m  (assoc-in db [:cities (keyword (city-name data))]))[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (2) passed to cljs.core/assoc-in[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn failure [db _])[0m
+  [36m40[0m  [36m[0m
+  [36m41[0m  [36m(defn init-state [{:keys [db]} [event _]][0m
+  [36m42[0m  [36m  (println "doing init state")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.274 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.196 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:67  column:39  ----[0m
+
+  [1mUse of undeclared Var weather.events/successful-get[0m
+
+  [36m64[0m  [36m(reg-event-fx :weather/init-state     init-state)[0m
+  [36m65[0m  [36m(reg-event-db :weather/sort-city      sort-by-city)[0m
+  [36m66[0m  [36m(reg-event-db :weather/get-data       get-data)[0m
+  [33m67[0m  [1m(reg-event-db :weather/successful-get successful-get)[0m
+  [0m  [0m  [33m                                      ^--- Use of undeclared Var weather.events/successful-get[0m
+  [36m68[0m  [36m(reg-event-db :weather/failure        failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:68  column:39  ----[0m
+
+  [1mUse of undeclared Var weather.events/failure[0m
+
+  [36m64[0m  [36m(reg-event-fx :weather/init-state     init-state)[0m
+  [36m65[0m  [36m(reg-event-db :weather/sort-city      sort-by-city)[0m
+  [36m66[0m  [36m(reg-event-db :weather/get-data       get-data)[0m
+  [36m67[0m  [36m(reg-event-db :weather/successful-get successful-get)[0m
+  [33m68[0m  [1m(reg-event-db :weather/failure        failure)[0m
+  [0m  [0m  [33m                                      ^--- Use of undeclared Var weather.events/failure[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.2 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.051 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.379 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.966 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.222 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.056 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.296 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.335 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:56  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-success[0m
+
+  [36m53[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m54[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m55[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [33m56[0m  [1m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-success[0m
+  [36m57[0m  [36m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:57  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-failure[0m
+
+  [36m53[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m54[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m55[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m56[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [33m57[0m  [1m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-failure[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.054 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:56  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-success[0m
+
+  [36m53[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m54[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m55[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [33m56[0m  [1m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-success[0m
+  [36m57[0m  [36m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:57  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-failure[0m
+
+  [36m53[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m54[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m55[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m56[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [33m57[0m  [1m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-failure[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.079 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:58  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-success[0m
+
+  [36m55[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m56[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m57[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [33m58[0m  [1m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-success[0m
+  [36m59[0m  [36m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:59  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-failure[0m
+
+  [36m55[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m56[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m57[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m58[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [33m59[0m  [1m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-failure[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.735 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:58  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-success[0m
+
+  [36m55[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m56[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m57[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [33m58[0m  [1m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-success[0m
+  [36m59[0m  [36m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:59  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/get-data-failure[0m
+
+  [36m55[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m56[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [36m57[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m58[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [33m59[0m  [1m(reg-event-db :weather/get-data-failure get-data-failure)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/get-data-failure[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.322 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.355 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.018 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.993 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.018 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.965 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.058 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.051 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.189 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.133 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.986 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:41  column:13  ----[0m
+
+  [1mUse of undeclared Var weather.events/vex[0m
+
+  [36m37[0m  [36m(defn get-data-failure [db [_ response]])[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn init-state [{:keys [db]} [_ _]][0m
+  [36m40[0m  [36m  (println "doing init state")[0m
+  [33m41[0m  [1m  (for [id (vex '4930956 '2643743 '5368361)][0m
+  [0m  [0m  [33m            ^--- Use of undeclared Var weather.events/vex[0m
+  [36m42[0m  [36m    {:db db[0m
+  [36m43[0m  [36m     :dispatch [:weather/get-data id]}))[0m
+  [36m44[0m  [36m[0m
+  [36m45[0m  [36m(defn sort-by-city[0m
+  [36m46[0m  [36m  [db [event _]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.077 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:41  column:12  ----[0m
+
+  [1mWrong number of args (3) passed to cljs.core/vec[0m
+
+  [36m37[0m  [36m(defn get-data-failure [db [_ response]])[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn init-state [{:keys [db]} [_ _]][0m
+  [36m40[0m  [36m  (println "doing init state")[0m
+  [33m41[0m  [1m  (for [id (vec '4930956 '2643743 '5368361)][0m
+  [0m  [0m  [33m           ^--- Wrong number of args (3) passed to cljs.core/vec[0m
+  [36m42[0m  [36m    {:db db[0m
+  [36m43[0m  [36m     :dispatch [:weather/get-data id]}))[0m
+  [36m44[0m  [36m[0m
+  [36m45[0m  [36m(defn sort-by-city[0m
+  [36m46[0m  [36m  [db [event _]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.109 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:41  column:12  ----[0m
+
+  [1mWrong number of args (3) passed to cljs.core/vec[0m
+
+  [36m37[0m  [36m(defn get-data-failure [db [_ response]])[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn init-state [{:keys [db]} [_ _]][0m
+  [36m40[0m  [36m  (println "doing init state")[0m
+  [33m41[0m  [1m  (for [id (vec 4930956 2643743 5368361)][0m
+  [0m  [0m  [33m           ^--- Wrong number of args (3) passed to cljs.core/vec[0m
+  [36m42[0m  [36m    {:db db[0m
+  [36m43[0m  [36m     :dispatch [:weather/get-data id]}))[0m
+  [36m44[0m  [36m[0m
+  [36m45[0m  [36m(defn sort-by-city[0m
+  [36m46[0m  [36m  [db [event _]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.091 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.209 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.985 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.145 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/db.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.526 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather/events.cljs   line:42  column:5  ----[0m
+
+  [1mfor requires an even number of forms in binding vector[0m
+
+  [36m40[0m  [36m(println "doing init state: " (:cities db))[0m
+  [36m41[0m  [36m(let [city_ids (:cities db)][0m
+  [33m42[0m  [1m  (for [id][0m
+  [0m  [0m  [33m  ^--- for requires an even number of forms in binding vector[0m
+  [36m43[0m  [36m    {:db db[0m
+  [36m44[0m  [36m     :dispatch [:weather/get-data 4930956]})))[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather/events.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.114 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.008 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.935 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.23 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.029 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.886 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.103 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.387 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:29  column:32  ----[0m
+
+  [1mUse of undeclared Var weather.events/id[0m
+
+  [36m25[0m  [36m        app-id  (str "&appid=" appid)][0m
+  [36m26[0m  [36m    (str main city-id app-id)))[0m
+  [36m27[0m  [36m      [0m
+  [36m28[0m  [36m(defn get-data [{:keys [db]} [_ ids]][0m
+  [33m29[0m  [1m  (println "getting data for " id[0m
+  [0m  [0m  [33m                               ^--- Use of undeclared Var weather.events/id[0m
+  [36m30[0m  [36m[0m
+  [36m31[0m  [36m[0m
+  [36m32[0m  [36m    (assoc-in db [:cities (keyword city-name)] city-data)))[0m
+  [36m33[0m  [36m[0m
+  [36m34[0m  [36m(defn get-data-success [db [_ response]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:32  column:48  ----[0m
+
+  [1mUse of undeclared Var weather.events/city-data[0m
+
+  [36m28[0m  [36m(defn get-data [{:keys [db]} [_ ids]][0m
+  [36m29[0m  [36m  (println "getting data for " id[0m
+  [36m30[0m  [36m[0m
+  [36m31[0m  [36m[0m
+  [33m32[0m  [1m    (assoc-in db [:cities (keyword city-name)] city-data)))[0m
+  [0m  [0m  [33m                                               ^--- Use of undeclared Var weather.events/city-data[0m
+  [36m33[0m  [36m[0m
+  [36m34[0m  [36m(defn get-data-success [db [_ response]][0m
+  [36m35[0m  [36m  (println (:body response)))[0m
+  [36m36[0m  [36m[0m
+  [36m37[0m  [36m(defn get-data-failure [db [_ response]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.421 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:32  column:48  ----[0m
+
+  [1mUse of undeclared Var weather.events/city-data[0m
+
+  [36m28[0m  [36m(defn get-data [{:keys [db]} [_ ids]][0m
+  [36m29[0m  [36m  (println "getting data for " ids[0m
+  [36m30[0m  [36m[0m
+  [36m31[0m  [36m[0m
+  [33m32[0m  [1m    (assoc-in db [:cities (keyword city-name)] city-data)))[0m
+  [0m  [0m  [33m                                               ^--- Use of undeclared Var weather.events/city-data[0m
+  [36m33[0m  [36m[0m
+  [36m34[0m  [36m(defn get-data-success [db [_ response]][0m
+  [36m35[0m  [36m  (println (:body response)))[0m
+  [36m36[0m  [36m[0m
+  [36m37[0m  [36m(defn get-data-failure [db [_ response]])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.082 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.92 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.201 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.066 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.179 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.089 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.071 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/subs.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/views.cljs   line:26  column:9  ----[0m
+
+  [1mNo such namespace: re-frame, could not locate re_frame.cljs, re_frame.cljc, or JavaScript source providing "re-frame"[0m
+
+  [36m22[0m  [36m    [:tbody[0m
+  [36m23[0m  [36m     [city-row]]])[0m
+  [36m24[0m  [36m[0m
+  [36m25[0m  [36m(defn debug-spot [][0m
+  [33m26[0m  [1m  [:p @(re-frame/subscribe [:cities])])[0m
+  [0m  [0m  [33m        ^--- No such namespace: re-frame, could not locate re_frame.cljs, re_frame.cljc, or JavaScript source providing "re-frame"[0m
+  [36m27[0m  [36m[0m
+  [36m28[0m  [36m[0m
+  [36m29[0m  [36m(defn weather-page [][0m
+  [36m30[0m  [36m  (rf/dispatch [:weather/init-state])[0m
+  [36m31[0m  [36m  (fn [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/views.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/views.cljs   line:26  column:9  ----[0m
+
+  [1mUse of undeclared Var re-frame/subscribe[0m
+
+  [36m22[0m  [36m    [:tbody[0m
+  [36m23[0m  [36m     [city-row]]])[0m
+  [36m24[0m  [36m[0m
+  [36m25[0m  [36m(defn debug-spot [][0m
+  [33m26[0m  [1m  [:p @(re-frame/subscribe [:cities])])[0m
+  [0m  [0m  [33m        ^--- Use of undeclared Var re-frame/subscribe[0m
+  [36m27[0m  [36m[0m
+  [36m28[0m  [36m[0m
+  [36m29[0m  [36m(defn weather-page [][0m
+  [36m30[0m  [36m  (rf/dispatch [:weather/init-state])[0m
+  [36m31[0m  [36m  (fn [][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/views.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.246 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.925 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.913 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.917 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.966 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/subs.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.942 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.739 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.186 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.205 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:61  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/sort-by-temp[0m
+
+  [36m57[0m  [36m(reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))[0m
+  [36m58[0m  [36m[0m
+  [36m59[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m60[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [33m61[0m  [1m(reg-event-db :weather/sort-temp        sort-by-temp)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/sort-by-temp[0m
+  [36m62[0m  [36m(reg-event-db :weather/get-data         get-data)[0m
+  [36m63[0m  [36m; (reg-event-db :weather/get-data-success get-data-success)[0m
+  [36m64[0m  [36m; (reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.341 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.922 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:35  column:45  ----[0m
+
+  [1mUse of undeclared Var weather.events/resposne[0m
+
+  [36m31[0m  [36m  (for [id kw-ids][0m
+  [36m32[0m  [36m    (let [url (make-url id)[0m
+  [36m33[0m  [36m          response (make-remote-call url)][0m
+  [36m34[0m  [36m      {:db db[0m
+  [33m35[0m  [1m       :dispatch [:weather/get-data-success resposne]})))[0m
+  [0m  [0m  [33m                                            ^--- Use of undeclared Var weather.events/resposne[0m
+  [36m36[0m  [36m[0m
+  [36m37[0m  [36m(defn get-data-success [db [_ response]][0m
+  [36m38[0m  [36m  (println (:body response))[0m
+  [36m39[0m  [36m  (assoc-in db [:cities id] response))[0m
+  [36m40[0m  [36m;[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:35  column:45  ----[0m
+
+  [1mUse of undeclared Var weather.events/resposne[0m
+
+  [36m31[0m  [36m  (for [id kw-ids][0m
+  [36m32[0m  [36m    (let [url (make-url id)[0m
+  [36m33[0m  [36m          response (make-remote-call url)][0m
+  [36m34[0m  [36m      {:db db[0m
+  [33m35[0m  [1m       :dispatch [:weather/get-data-success resposne]})))[0m
+  [0m  [0m  [33m                                            ^--- Use of undeclared Var weather.events/resposne[0m
+  [36m36[0m  [36m[0m
+  [36m37[0m  [36m(defn get-data-success [db [_ response]][0m
+  [36m38[0m  [36m  (println (:body response))[0m
+  [36m39[0m  [36m  (assoc-in db [:cities id] response))[0m
+  [36m40[0m  [36m;[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:39  column:25  ----[0m
+
+  [1mUse of undeclared Var weather.events/id[0m
+
+  [36m35[0m  [36m       :dispatch [:weather/get-data-success resposne]})))[0m
+  [36m36[0m  [36m[0m
+  [36m37[0m  [36m(defn get-data-success [db [_ response]][0m
+  [36m38[0m  [36m  (println (:body response))[0m
+  [33m39[0m  [1m  (assoc-in db [:cities id] response))[0m
+  [0m  [0m  [33m                        ^--- Use of undeclared Var weather.events/id[0m
+  [36m40[0m  [36m;[0m
+  [36m41[0m  [36m; (defn get-data-failure [db [_ response]])[0m
+  [36m42[0m  [36m[0m
+  [36m43[0m  [36m(defn init-state [{:keys [db]} [_ _]][0m
+  [36m44[0m  [36m  (println "doing init state")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:63  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/sort-by-temp[0m
+
+  [36m59[0m  [36m(reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))[0m
+  [36m60[0m  [36m[0m
+  [36m61[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m62[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [33m63[0m  [1m(reg-event-db :weather/sort-temp        sort-by-temp)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/sort-by-temp[0m
+  [36m64[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m65[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [36m66[0m  [36m; (reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.407 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:39  column:25  ----[0m
+
+  [1mUse of undeclared Var weather.events/id[0m
+
+  [36m35[0m  [36m       :dispatch [:weather/get-data-success response]})))[0m
+  [36m36[0m  [36m[0m
+  [36m37[0m  [36m(defn get-data-success [db [_ response]][0m
+  [36m38[0m  [36m  (println (:body response))[0m
+  [33m39[0m  [1m  (assoc-in db [:cities id] response))[0m
+  [0m  [0m  [33m                        ^--- Use of undeclared Var weather.events/id[0m
+  [36m40[0m  [36m;[0m
+  [36m41[0m  [36m; (defn get-data-failure [db [_ response]])[0m
+  [36m42[0m  [36m[0m
+  [36m43[0m  [36m(defn init-state [{:keys [db]} [_ _]][0m
+  [36m44[0m  [36m  (println "doing init state")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:63  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/sort-by-temp[0m
+
+  [36m59[0m  [36m(reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))[0m
+  [36m60[0m  [36m[0m
+  [36m61[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m62[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [33m63[0m  [1m(reg-event-db :weather/sort-temp        sort-by-temp)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/sort-by-temp[0m
+  [36m64[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m65[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [36m66[0m  [36m; (reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.194 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:40  column:25  ----[0m
+
+  [1mUse of undeclared Var weather.events/id[0m
+
+  [36m37[0m  [36m(defn get-data-success [db [_ response]][0m
+  [36m38[0m  [36m  (let [id (:id response)[0m
+  [36m39[0m  [36m        name (:name response)])[0m
+  [33m40[0m  [1m  (assoc-in db [:cities id] response))[0m
+  [0m  [0m  [33m                        ^--- Use of undeclared Var weather.events/id[0m
+  [36m41[0m  [36m;[0m
+  [36m42[0m  [36m; (defn get-data-failure [db [_ response]])[0m
+  [36m43[0m  [36m[0m
+  [36m44[0m  [36m(defn init-state [{:keys [db]} [_ _]][0m
+  [36m45[0m  [36m  (println "doing init state")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:64  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/sort-by-temp[0m
+
+  [36m60[0m  [36m(reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m63[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [33m64[0m  [1m(reg-event-db :weather/sort-temp        sort-by-temp)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/sort-by-temp[0m
+  [36m65[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m66[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [36m67[0m  [36m; (reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.124 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:66  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/sort-by-temp[0m
+
+  [36m62[0m  [36m(reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))[0m
+  [36m63[0m  [36m[0m
+  [36m64[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m65[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [33m66[0m  [1m(reg-event-db :weather/sort-temp        sort-by-temp)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/sort-by-temp[0m
+  [36m67[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m68[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [36m69[0m  [36m; (reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.368 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.398 seconds.[0m
+[36m----  Could not Read  src/cljs/weather/events.cljs   line:72 ----[0m
+
+  [1m/Users/czabajhome/Projects/Clojure/Ampion/weather/src/cljs/weather/events.cljs [line 72, col 1] Unexpected EOF while reading item 12 of list, starting at line 52 and column 1.[0m
+
+[36m----  Reader Error : Please see src/cljs/weather/events.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:57  column:1  ----[0m
+
+  [1msort-by-city at line 52 is being replaced[0m
+
+  [36m53[0m  [36m  [db [event _]])[0m
+  [36m54[0m  [36m  ;; get current sort order from db[0m
+  [36m55[0m  [36m  ;; resort db[0m
+  [36m56[0m  [36m  ;; update to new order[0m
+  [33m57[0m  [1m(defn sort-by-city[0m
+  [0m  [0m  [33m^--- sort-by-city at line 52 is being replaced[0m
+  [36m58[0m  [36m  [db [event _]])[0m
+  [36m59[0m  [36m[0m
+  [36m60[0m  [36m;;dispatchers[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(reg-event-db :initialize-db   (fn [_ _] db/default-db))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:68  column:41  ----[0m
+
+  [1mUse of undeclared Var weather.events/sort-by-temp[0m
+
+  [36m64[0m  [36m(reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(reg-event-fx :weather/init-state       init-state)[0m
+  [36m67[0m  [36m(reg-event-db :weather/sort-city        sort-by-city)[0m
+  [33m68[0m  [1m(reg-event-db :weather/sort-temp        sort-by-temp)[0m
+  [0m  [0m  [33m                                        ^--- Use of undeclared Var weather.events/sort-by-temp[0m
+  [36m69[0m  [36m(reg-event-fx :weather/get-data         get-data)[0m
+  [36m70[0m  [36m(reg-event-db :weather/get-data-success get-data-success)[0m
+  [36m71[0m  [36m; (reg-event-db :weather/get-data-failure get-data-failure)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.071 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.947 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.256 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.226 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.171 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.047 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.151 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.959 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/views.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.549 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.122 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.923 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.129 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.118 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.234 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.163 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:26  column:17  ----[0m
+
+  [1mNo such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing "r"[0m
+
+  [36m23[0m  [36m(defn get-data [db [_ kw-ids]][0m
+  [36m24[0m  [36m  (println "getting data for " kw-ids)[0m
+  [36m25[0m  [36m  (println "the cities in the DB:" (:cities db))[0m
+  [33m26[0m  [1m  (let [cities (r/atom (:cities db))][0m
+  [0m  [0m  [33m                ^--- No such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing "r"[0m
+  [36m27[0m  [36m    (for [id kw-ids][0m
+  [36m28[0m  [36m      (let [url      (make-url id)[0m
+  [36m29[0m  [36m            response (make-remote-call url)[0m
+  [36m30[0m  [36m            name     (:name response)[0m
+  [36m31[0m  [36m            temp     (get-in response [:main :temp])][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:26  column:17  ----[0m
+
+  [1mUse of undeclared Var r/atom[0m
+
+  [36m23[0m  [36m(defn get-data [db [_ kw-ids]][0m
+  [36m24[0m  [36m  (println "getting data for " kw-ids)[0m
+  [36m25[0m  [36m  (println "the cities in the DB:" (:cities db))[0m
+  [33m26[0m  [1m  (let [cities (r/atom (:cities db))][0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var r/atom[0m
+  [36m27[0m  [36m    (for [id kw-ids][0m
+  [36m28[0m  [36m      (let [url      (make-url id)[0m
+  [36m29[0m  [36m            response (make-remote-call url)[0m
+  [36m30[0m  [36m            name     (:name response)[0m
+  [36m31[0m  [36m            temp     (get-in response [:main :temp])][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.331 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:26  column:17  ----[0m
+
+  [1mNo such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing "r"[0m
+
+  [36m23[0m  [36m(defn get-data [db [_ kw-ids]][0m
+  [36m24[0m  [36m  (println "getting data for " kw-ids)[0m
+  [36m25[0m  [36m  (println "the cities in the DB:" (:cities db))[0m
+  [33m26[0m  [1m  (let [cities (r/atom (:cities db))][0m
+  [0m  [0m  [33m                ^--- No such namespace: r, could not locate r.cljs, r.cljc, or JavaScript source providing "r"[0m
+  [36m27[0m  [36m    (for [id kw-ids][0m
+  [36m28[0m  [36m      (let [url      (make-url id)[0m
+  [36m29[0m  [36m            response (make-remote-call url)[0m
+  [36m30[0m  [36m            name     (:name response)[0m
+  [36m31[0m  [36m            temp     (get-in response [:main :temp])][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:26  column:17  ----[0m
+
+  [1mUse of undeclared Var r/atom[0m
+
+  [36m23[0m  [36m(defn get-data [db [_ kw-ids]][0m
+  [36m24[0m  [36m  (println "getting data for " kw-ids)[0m
+  [36m25[0m  [36m  (println "the cities in the DB:" (:cities db))[0m
+  [33m26[0m  [1m  (let [cities (r/atom (:cities db))][0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var r/atom[0m
+  [36m27[0m  [36m    (for [id kw-ids][0m
+  [36m28[0m  [36m      (let [url      (make-url id)[0m
+  [36m29[0m  [36m            response (make-remote-call url)[0m
+  [36m30[0m  [36m            name     (:name response)[0m
+  [36m31[0m  [36m            temp     (get-in response [:main :temp])][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.034 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.898 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.878 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.991 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather/events.cljs   line:28  column:6  ----[0m
+
+  [1mUse of undeclared Var weather.events/printlin[0m
+
+  [36m24[0m  [36m(defn get-data [db [_ kw-ids]][0m
+  [36m25[0m  [36m  (println "getting data for " kw-ids)[0m
+  [36m26[0m  [36m  (println "the cities in the DB:" (:cities db))[0m
+  [36m27[0m  [36m  (let [cities (r/atom (:cities db))][0m
+  [33m28[0m  [1m    (printlin "atom city:" @cities)[0m
+  [0m  [0m  [33m     ^--- Use of undeclared Var weather.events/printlin[0m
+  [36m29[0m  [36m    (for [id kw-ids][0m
+  [36m30[0m  [36m      (let [url      (make-url id)[0m
+  [36m31[0m  [36m            response (make-remote-call url)[0m
+  [36m32[0m  [36m            name     (:name response)[0m
+  [36m33[0m  [36m            temp     (get-in response [:main :temp])][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather/events.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.315 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.122 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.139 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.981 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.973 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.044 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.967 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.916 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.895 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.064 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.916 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.946 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.027 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.975 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.942 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.946 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather/events.js

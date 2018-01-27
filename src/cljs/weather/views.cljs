@@ -5,29 +5,31 @@
             [weather.events]))
 
 (defn table-header []
-  [:thead
-   [:tr
-    [:th {:on-click #(rf/dispatch [:weather/sort-city])}
-      "City"]
-    [:th "Current Temperature"]
-    [:th "Weather Description"]]])
+  [:tr
+   [:th {:on-click #(rf/dispatch [:weather/sort-city])}
+        "City"]
+   [:th {:on-click #(rf/dispatch [:weather/sort-temp])}
+        "Current Temperature"]])
 
 (defn city-row []
    [:tr
     [:td "Boston"]
-    [:td "GET TEMP HERE"]
-    [:td "GET DESC HERE"]])
+    [:td "GET TEMP HERE"]])
 
 (defn city-table []
   [:table
     [table-header]
     [:tbody
-     [city-row]]])
+      [city-row]]])
+
+(defn debug-spot []
+  [:p (str "see here:" @(rf/subscribe [:weather/cities]))])
+
 
 (defn weather-page []
   (rf/dispatch [:weather/init-state])
   (fn []
     [:div.container
       [:h1 "Current Weather"]
-
-      [city-table]]))
+      [city-table]
+      [debug-spot]]))
