@@ -16,7 +16,7 @@ To start a web server for the application, in the root directory, run:
 
     lein run
 
-Open a new terminal to the same root directory and run:
+Open a new terminal to the same root directory and run the following to compile the js:
 
     lein figwheel
 

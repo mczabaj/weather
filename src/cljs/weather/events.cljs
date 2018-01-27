@@ -1,6 +1,7 @@
 (ns weather.events
   (:require
-    [clojure.string :refer [blank?] :as string]
+    [ajax.core :as ajax]
+    [clojure.string :refer [blank? join] :as string]
     [day8.re-frame.http-fx]
     [weather.db :as db]
     [reagent.core :as r]
@@ -11,39 +12,43 @@
 
 (def appid "f333c36f17612d7b693745b00991425a")
 
-(defn make-remote-call [endpoint]
-  (go (let [response (<! (http/get endpoint {:with-credentials? false}))]
-        (str (:body response)))))
+(defn make-weather-call [{:keys [db]} [_ endpoint]]
+  (println "3. going to try to make the call out for weather:" endpoint)
+  {:db db
+   :http-xhrio {:method          :get
+                :uri             endpoint
+                :timeout         5000
+                :format          (ajax/json-request-format)
+                :response-format (ajax/json-response-format {:keywords? true})
+                :on-success      [:weather/get-data-success]
+                :on-failure      [:weather/get-data-failure]}})
 
-(defn make-url [kw-id]
-  (let [main    "http://api.openweathermap.org/data/2.5/weather"
-        city-id (str "?id=" (name kw-id))
-        app-id  (str "&appid=" appid)]
-    (str main city-id app-id "&units=imperial")))
+(defn make-url [ids]
+  (let [main         "http://api.openweathermap.org/data/2.5/group?id="
+        city-ids     (join "," ids)
+        other-params (str "&appid=" appid "&units=imperial")]
+    (println "2. made the url:" main city-ids other-params)
+    (str main city-ids other-params)))
 
-(defn get-data [db [_ kw-ids]]
-  (println "the cities in the DB:" (:cities db))
-  (let [cities (atom (:cities db))]
-    (println "atom cities:" @cities)
-    (for [id kw-ids]
-      (let [url      (make-url id)
-            response (make-remote-call url)
-            name     (:name response)
-            temp     (get-in response [:main :temp])]
-        (println "the city name and temp" name "and" temp)
-        (swap! cities assoc id {:name name :temp temp})))
-    (println "updates cities:" @cities)
-    (assoc db :cities @cities)))
+;; http://api.openweathermap.org/data/2.5/group?id=4930956,2643743,5368361&appid=f333c36f17612d7b693745b00991425a&units=imperial
+
+(defn get-data [{:keys [db]} [_ ids]]
+  (println "1. the cities in the DB:" (:cities db))
+  (let [url (make-url ids)]
+    {:db db
+     :dispatch [:weather/make-weather-call url]}))
 
 (defn get-data-success [db [_ response]]
-  (let [id (:id response)
-        name (:name response)
-        temp (get-in response [:main :temp])]
-    (println "get data success, cities:" (:cities db))
-    (assoc-in db [:cities id] {:name name
-                               :temp temp})))
-;
-; (defn get-data-failure [db [_ response]])
+  (println "4S. get data success whole response:" response)
+  (let [body (:list response)]
+        ;;name (:name response)
+        ;;temp (get-in response [:main :temp])]
+    (println "5. get data success, body resp:" body)
+    (assoc db :cities body)))
+
+(defn get-data-failure [db [_ response]]
+  (println "4F. get data failure whole response:" response)
+  (assoc db [:cities] {:msg "No Data Returned"}))
 
 (defn init-state [{:keys [db]} [_ _]]
   (println "doing init state")
@@ -69,6 +74,7 @@
 (reg-event-fx :weather/init-state       init-state)
 (reg-event-db :weather/sort-city        sort-by-city)
 (reg-event-db :weather/sort-temp        sort-by-temp)
-(reg-event-db :weather/get-data         get-data)
+(reg-event-fx :weather/get-data         get-data)
+(reg-event-fx :weather/make-weather-call make-weather-call)
 (reg-event-db :weather/get-data-success get-data-success)
-; (reg-event-db :weather/get-data-failure get-data-failure)
+(reg-event-db :weather/get-data-failure get-data-failure)
