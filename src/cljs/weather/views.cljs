@@ -7,10 +7,12 @@
 (defn table-header []
   [:thead
    [:tr
-    [:th {:on-click #(rf/dispatch [:weather/sort-city])}
-         "City"]
-    [:th {:on-click #(rf/dispatch [:weather/sort-temp])}
-         "Current Temperature"]]])
+    [:th {:width "200"
+          :on-click #(rf/dispatch [:weather/sort-table :name])}
+      "City"]
+    [:th {:width "200"
+          :on-click #(rf/dispatch [:weather/sort-table :temp])}
+      "Current Temperature"]]])
 
 (defn city-rows [cities]
   [:tbody

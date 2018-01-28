@@ -11,4 +11,9 @@
   (fn [db _] (:docs db)))
 
 (reg-sub :weather/cities
-  (fn [db _] (:cities db)))
+  (fn [db _]
+    (let [col (get-in db [:sort :sort-val])
+          sorted-cities (sort-by col (get db :cities []))]
+      (if (get-in db [:sort :ascending])
+        sorted-cities
+        (rseq sorted-cities)))))

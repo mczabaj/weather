@@ -64,14 +64,12 @@
     {:db db
      :dispatch [:weather/get-data city-ids]}))
 
-(defn sort-by-city
-  [db [event _]])
-  ;; get current sort order from db
-  ;; resort db
-  ;; update to new order
-
-(defn sort-by-temp
-  [db [event _]])
+(defn sort-table [db [_ column]]
+  (if (= column (get-in db [:sort :sort-val]))
+    (assoc-in db [:sort :ascending] (not (get-in db [:sort :ascending])))
+    (-> db
+        (assoc-in [:sort :sort-val] column)
+        (assoc-in [:sort :ascending] true))))
 
 ;;dispatchers
 
@@ -80,8 +78,7 @@
 (reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))
 
 (reg-event-fx :weather/init-state       init-state)
-(reg-event-db :weather/sort-city        sort-by-city)
-(reg-event-db :weather/sort-temp        sort-by-temp)
+(reg-event-db :weather/sort-table       sort-table)
 (reg-event-fx :weather/get-data         get-data)
 (reg-event-fx :weather/make-weather-call make-weather-call)
 (reg-event-db :weather/get-data-success get-data-success)
