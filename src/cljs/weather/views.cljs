@@ -29,27 +29,28 @@
 
 (defn back-to-list []
   [:div.row
-    [:a#back-to-list {:class "btn"
-                      :href "#"}
-      "Back to City List (a-tag)"]
     [:button#back {:type "button"
-                   :class "btn btn-secondary"
+                   :class "btn btn-primary"
                    :on-click #(rf/dispatch [:set-active-page :home])}
-      "Return to City List (button)"]])
+      "Return to City List"]])
 
 (defn forecast-rows [forecast]
   [:tbody
     (for [day forecast]
-      [:tr
-        [:td "45 degrees (not)"]
-        [:td "snow of course (yeah, right!)"]])])
+      [:tr {:key (:date-time day)}
+        [:td (:date-time day)]
+        [:td (:description day)]
+        [:td (:temp-min day)]
+        [:td (:temp-max day)]])])
 
 (defn forecast-table []
   [:table
     [:thead
       [:tr
-        [:th "Temperature"]
-        [:th "Description"]]]
+        [:th "Date and Time"]
+        [:th "Description"]
+        [:th "Minimum Temperature"]
+        [:th "Maximum Temperature"]]]
     [forecast-rows @(rf/subscribe [:forecast/weather])]])
 
 (defn weather-page []
@@ -63,6 +64,6 @@
   (rf/dispatch [:forecast/get-5-day])
   (fn []
     [:div.container
-      [:h1 (str "5 Day Forecast for" @(rf/subscribe [:forecast/city-name]))]
+      [:h1 (str "5 Day Forecast for " @(rf/subscribe [:forecast/city-name]))]
       [back-to-list]
       [forecast-table]]))

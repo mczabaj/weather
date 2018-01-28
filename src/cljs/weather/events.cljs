@@ -88,11 +88,11 @@
     ;(println "5. get data success, body resp:" body)
     (doseq [hour hours-40]
       (let [date-time    (:dt_txt hour)
-            weather-list (:description (first (:weather hour)))
+            description (:description (first (:weather hour)))
             temp-min     (get-in hour [:main :temp_min])
             temp-max     (get-in hour [:main :temp_max])]
         (swap! forecasts conj {:date-time date-time
-                               :weather-list weather-list
+                               :description description
                                :temp-min temp-min
                                :temp-max temp-max})))
     ;(println "6. new cities map:" @cities)
