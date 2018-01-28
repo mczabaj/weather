@@ -10,6 +10,20 @@ You will need [Leiningen][1] 2.0 or above installed to run in dev.
 
 [1]: https://github.com/technomancy/leiningen
 
+## Running final version
+
+To run the compiled version of the application (you still need lein), run:
+
+    lein uberjar
+
+to compile to a .jar file. Then execute, from the root directory:
+
+    java -jar target/uberjar/weather.jar
+
+And finally navigate to:
+
+    localhost:3000
+
 ## Running in Dev
 
 To start a web server for the application, in the root directory, run:
