@@ -17,3 +17,6 @@
       (if (get-in db [:sort :ascending])
         sorted-cities
         (rseq sorted-cities)))))
+
+(reg-sub :forecast/city-name
+  (fn [db _] (get-in db [:forecast :city-name] "No City Selected")))

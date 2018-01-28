@@ -12,7 +12,7 @@
 
 (def appid "f333c36f17612d7b693745b00991425a")
 
-(defn make-weather-call [{:keys [db]} [_ endpoint]]
+(defn make-remote-call [db endpoint success-event-kw failure-event-kw]
   ;(println "3. going to try to make the call out for weather:" endpoint)
   {:db db
    :http-xhrio {:method          :get
@@ -20,25 +20,33 @@
                 :timeout         5000
                 :format          (ajax/json-request-format)
                 :response-format (ajax/json-response-format {:keywords? true})
-                :on-success      [:weather/get-data-success]
-                :on-failure      [:weather/get-data-failure]}})
+                :on-success      [success-event-kw]
+                :on-failure      [failure-event-kw]}})
 
-(defn make-url [ids]
+;; http://api.openweathermap.org/data/2.5/group?id=4930956,2643743,5368361&appid=f333c36f17612d7b693745b00991425a&units=imperial
+(defn make-weather-url [ids]
   (let [main         "http://api.openweathermap.org/data/2.5/group?id="
         city-ids     (join "," ids)
         other-params (str "&appid=" appid "&units=imperial")]
     ;(println "2. made the url:" main city-ids other-params)
     (str main city-ids other-params)))
 
-;; http://api.openweathermap.org/data/2.5/group?id=4930956,2643743,5368361&appid=f333c36f17612d7b693745b00991425a&units=imperial
+;; http://api.openweathermap.org/data/2.5/forecast?id=4930956&appid=f333c36f17612d7b693745b00991425a&units=imperial
+(defn make-forecast-url [id]
+  (let [main         "http://api.openweathermap.org/data/2.5/forecast?id="
+        other-params (str "&appid=" appid "&units=imperial")]
+    (str main id other-params)))
 
-(defn get-data [{:keys [db]} [_ ids]]
-  ;(println "1. the cities in the DB:" (:cities db))
-  (let [url (make-url ids)]
-    {:db db
-     :dispatch [:weather/make-weather-call url]}))
+(defn get-current [{:keys [db]} [_ _]]
+  (let [city-ids (:default-cities db)
+        url (make-weather-url city-ids)]
+    ;(println "1. the cities in the DB:" (:cities db))
+    (make-remote-call db
+                      url
+                      :weather/get-current-success
+                      :weather/get-current-failure)))
 
-(defn get-data-success [db [_ response]]
+(defn get-current-success [db [_ response]]
   ;(println "4S. get data success whole response:" response)
   (let [cities (r/atom [])
         body   (:list response)]
@@ -54,15 +62,9 @@
     ;(println "6. new cities map:" @cities)
     (assoc db :cities @cities)))
 
-(defn get-data-failure [db [_ response]]
+(defn get-current-failure [db [_ response]]
   ;(println "4F. get data failure whole response:" response)
   (assoc db [:cities] {:msg "No Data Returned"}))
-
-(defn init-state [{:keys [db]} [_ _]]
-  ;(println "doing init state")
-  (let [city-ids (:default-cities db)]
-    {:db db
-     :dispatch [:weather/get-data city-ids]}))
 
 (defn sort-table [db [_ column]]
   (if (= column (get-in db [:sort :sort-val]))
@@ -71,15 +73,33 @@
         (assoc-in [:sort :sort-val] column)
         (assoc-in [:sort :ascending] true))))
 
+(defn set-city-id [{:keys [db]} [_ city-id]]
+  {:db (assoc-in db [:forecast :city-id] city-id)
+   :dispatch [:set-active-page :forecast]})
+
+(defn get-5-day [{:keys [db]} [_ _]]
+  (let [city-id (get-in db [:forecast :city-id])
+        url     (make-forecast-url city-id)]
+    (make-remote-call db
+                      url
+                      :forecast/get-5-day-success
+                      :forecast/get-5-day-failure)))
+
+(defn get-5-day-success [db [_ response]])
+
+(defn get-5-day-failure [db [_ response]])
+
 ;;dispatchers
 
 (reg-event-db :initialize-db   (fn [_ _] db/default-db))
 (reg-event-db :set-active-page (fn [db [_ page]] (assoc db :page page)))
 (reg-event-db :set-docs        (fn [db [_ docs]] (assoc db :docs docs)))
 
-(reg-event-fx :weather/init-state       init-state)
-(reg-event-db :weather/sort-table       sort-table)
-(reg-event-fx :weather/get-data         get-data)
-(reg-event-fx :weather/make-weather-call make-weather-call)
-(reg-event-db :weather/get-data-success get-data-success)
-(reg-event-db :weather/get-data-failure get-data-failure)
+(reg-event-fx :weather/get-current         get-current)
+(reg-event-db :weather/get-current-success get-current-success)
+(reg-event-db :weather/get-current-failure get-current-failure)
+(reg-event-db :weather/sort-table          sort-table)
+(reg-event-fx :forecast/set-city-id        set-city-id)
+(reg-event-fx :forecast/get-5-day          get-5-day)
+(reg-event-db :forecast/get-5-day-success  get-5-day-success)
+(reg-event-db :forecast/get-5-day-failure  get-5-day-failure)

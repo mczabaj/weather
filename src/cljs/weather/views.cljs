@@ -17,7 +17,8 @@
 (defn city-rows [cities]
   [:tbody
    (for [c cities]
-     [:tr {:key (:id c)}
+     [:tr {:key (:id c) :data-id (:id c)
+           :on-click #(rf/dispatch [:forecast/set-city-id (:id c)])}
        [:td (str (:name c))]
        [:td (str (:temp c))]])])
 
@@ -26,9 +27,34 @@
     [table-header]
     [city-rows @(rf/subscribe [:weather/cities])]])
 
+(defn back-to-list []
+  [:div.row
+    [:a#back-to-list {:class "btn"
+                      :href "#"}
+      "Back to City List (a-tag)"]
+    [:button#back {:type "button"
+                   :class "btn btn-secondary"
+                   :on-click #(rf/dispatch [:set-active-page :home])}
+      "Return to City List (button)"]])
+
+(defn forecast-table []
+  [:table
+    [:thead
+      [:tr
+        [:th]
+        [:th ""]]]])
+
 (defn weather-page []
-  (rf/dispatch [:weather/init-state])
+  (rf/dispatch [:weather/get-current])
   (fn []
     [:div.container
       [:h1 "Current Weather"]
       [city-table]]))
+
+(defn forecast-page []
+  (rf/dispatch [:forecast/get-5-day])
+  (fn []
+    [:div.container
+      [:h1 (str "5 Day Forecast for " (@rf/subscribe [:forecast/city-name]))]
+      [back-to-list]
+      [forecast-table]]))
