@@ -35,8 +35,8 @@
 (defn home-page []
   [views/weather-page])
 
-(defn forecast-page [city-id]
-  [views/forecast-page city-id])
+(defn forecast-page []
+  [views/forecast-page])
 
 (defn about-page []
   [:div.container
@@ -53,7 +53,7 @@
 
 (def pages
   {:home #'home-page
-   :forcast #'forecast-page
+   :forecast #'forecast-page
    :about #'about-page
    :luminus #'luminus-page})
 
@@ -68,7 +68,7 @@
 
 (secretary/defroute "/" []
   (rf/dispatch [:set-active-page :home]))
-; 
+
 ; (secretary/defroute "/forecast" []
 ;   (rf/dispatch [:set-active-page :forecast]))
 

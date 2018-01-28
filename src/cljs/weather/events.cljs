@@ -50,14 +50,11 @@
   ;(println "4S. get data success whole response:" response)
   (let [cities (r/atom [])
         body   (:list response)]
-        ;;name (:name response)
-        ;;temp (get-in response [:main :temp])]
     ;(println "5. get data success, body resp:" body)
     (doseq [city body]
       (let [id   (:id city)
             name (:name city)
             temp (get-in city [:main :temp])]
-        ;(println "5.5. inside for: " city)
         (swap! cities conj {:id id :name name :temp temp})))
     ;(println "6. new cities map:" @cities)
     (assoc db :cities @cities)))
@@ -85,9 +82,30 @@
                       :forecast/get-5-day-success
                       :forecast/get-5-day-failure)))
 
-(defn get-5-day-success [db [_ response]])
+(defn get-5-day-success [db [_ response]]
+  (let [forecasts (r/atom [])
+        hours-40  (:list response)]
+    ;(println "5. get data success, body resp:" body)
+    (doseq [hour hours-40]
+      (let [date-time    (:dt_txt hour)
+            weather-list (:description (first (:weather hour)))
+            temp-min     (get-in hour [:main :temp_min])
+            temp-max     (get-in hour [:main :temp_max])]
+        (swap! forecasts conj {:date-time date-time
+                               :weather-list weather-list
+                               :temp-min temp-min
+                               :temp-max temp-max})))
+    ;(println "6. new cities map:" @cities)
+    (-> db
+        (assoc-in [:forecast :city-name] (get-in response [:city :name]))
+        (assoc-in [:forecast :weather] @forecasts)
+        (dissoc   [:forecast :msg]))))
 
-(defn get-5-day-failure [db [_ response]])
+
+(defn get-5-day-failure [db [_ response]]
+  (-> db
+      (assoc-in [:forecast :msg] "Failed to get 5-day forecast.")
+      (dissoc [:forecast :weather])))
 
 ;;dispatchers
 

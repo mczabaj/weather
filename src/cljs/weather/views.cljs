@@ -37,12 +37,20 @@
                    :on-click #(rf/dispatch [:set-active-page :home])}
       "Return to City List (button)"]])
 
+(defn forecast-rows [forecast]
+  [:tbody
+    (for [day forecast]
+      [:tr
+        [:td "45 degrees (not)"]
+        [:td "snow of course (yeah, right!)"]])])
+
 (defn forecast-table []
   [:table
     [:thead
       [:tr
-        [:th]
-        [:th ""]]]])
+        [:th "Temperature"]
+        [:th "Description"]]]
+    [forecast-rows @(rf/subscribe [:forecast/weather])]])
 
 (defn weather-page []
   (rf/dispatch [:weather/get-current])
@@ -55,6 +63,6 @@
   (rf/dispatch [:forecast/get-5-day])
   (fn []
     [:div.container
-      [:h1 (str "5 Day Forecast for " (@rf/subscribe [:forecast/city-name]))]
+      [:h1 (str "5 Day Forecast for" @(rf/subscribe [:forecast/city-name]))]
       [back-to-list]
       [forecast-table]]))

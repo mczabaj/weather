@@ -18,5 +18,11 @@
         sorted-cities
         (rseq sorted-cities)))))
 
+(reg-sub :forecast/city-id
+  (fn [db _] (get-in db [:forecast :city-id])))
+
 (reg-sub :forecast/city-name
   (fn [db _] (get-in db [:forecast :city-name] "No City Selected")))
+
+(reg-sub :forecast/weather
+  (fn [db _] (get-in db [:forecast :weather] [])))
